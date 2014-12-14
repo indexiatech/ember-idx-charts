@@ -73,7 +73,7 @@ export default Em.ObjectController.extend({
             dataset2.August=Number(this.get('augline')%100);
         }
         return [dataset1,dataset2];
-    }.property('janline','febline','marline','aprline','mayline','junline','julline','augline', 'label1', 'label2'),
+    }.property('janline','febline','marline','aprline','mayline','junline','julline','augline', 'label3', 'label4'),
 
     pClicked: '',
     bClicked: '',

@@ -1,0 +1,66 @@
+<div>
+    <div>
+        <h3>Pie/Doughnut Chart & Update</h3>
+        <form>
+            Red: {{input value=redValue type="number"}}
+            Green: {{input value=greenValue type="number"}}
+            Blue: {{input value=blueValue type="number"}}
+            NewSegment: {{input value=extraData1}}
+            Pie?: {{input type="checkbox" checked=isPie}}
+            animateRotate: {{input type="checkbox" checked=animateRotate}}
+            segmentShowStroke: {{input type="checkbox" checked=segmentShowStroke}}
+            animateScale: {{input type="checkbox" checked=animateScale}}
+            <button {{action "rerender"}}>Re Render Chart</button>
+        </form>
+    </div>
+    {{cc-pd-chart data=cakeData isPie=isPie width=200 height=200 legend=true animateRotate=animateRotate segmentShowStroke=segmentShowStroke animateScale=animateScale reRender=reRender
+    onClick="clickPie"}}
+    {{#if pClicked}}
+        <span>{{pClicked}}</span>
+    {{/if}}
+</div><br><br>
+
+<div>
+    <div>
+        January: {{input value=jan type="number"}}
+        February: {{input value=feb type="number"}}
+        March: {{input value=mar type="number"}}
+        April: {{input value=apr type="number"}}
+        May: {{input value=may type="number"}}
+        June: {{input value=jun type="number"}}
+        July: {{input value=jul type="number"}}
+        August: {{input value=aug type="number"}}<br>
+        Label for blue dataset: {{input value=label1}}
+        Label for red dataset: {{input value=label2}}
+        barDatasetSpacing: {{input type="number" value=barDatasetSpacing}}
+        scaleShowGridLines: {{input type="checkbox" checked=scaleShowGridLines}}
+        <button {{action "rerender"}}>Re Render Chart</button>
+    </div>
+    {{cc-bar-chart data=barData width=700 height=400 scaleShowGridLines=scaleShowGridLines barDatasetSpacing=barDatasetSpacing reRender=reRender legend=true onClick="clickBar"}}
+    {{#if bClicked}}
+        <span>{{bClicked}}</span>
+    {{/if}}
+</div><br><br>
+
+<div>
+    <div>
+        January: {{input value=janline type="number"}}
+        February: {{input value=febline type="number"}}
+        March: {{input value=marline type="number"}}
+        April: {{input value=aprline type="number"}}
+        May: {{input value=mayline type="number"}}
+        June: {{input value=junline type="number"}}
+        July: {{input value=julline type="number"}}
+        August: {{input value=augline type="number"}}<br>
+        Label for blue dataset: {{input value=label3}}
+        Label for red dataset: {{input value=label4}}
+        scaleShowGridLines: {{input type="checkbox" checked=scaleShowGridLines}}
+        pointDot: {{input type="checkbox" checked=pointDot}}
+        datasetFill: {{input type="checkbox" checked=datasetFill}}
+        <button {{action "rerender"}}>Re Render Chart</button>
+    </div>
+    {{cc-line-chart data=lineData width=700 height=400 scaleShowGridLines=scaleShowGridLines pointDot=pointDot datasetFill=datasetFill reRender=reRender legend=true onClick="clickLine"}}
+    {{#if lClicked}}
+        <span>{{lClicked}}</span>
+    {{/if}}
+</div>

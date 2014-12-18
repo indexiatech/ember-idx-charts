@@ -28,12 +28,12 @@ export default Ember.Component.extend(Charts, Options, BR, {
      */
     extractData: function(){
         if (Object.prototype.toString.call(this.get('data')) !== '[object Array]') { return this.get('data'); }
-        var dataSets =[]; var labels = [];
+        var dataSets =[];
         var colors = this.get('colors');
         var highlight = this.get('highlights');
         var maps = this.get('data');
+        var labels = this.extractLabels(maps[0]);
         for (var j=0;j<maps.length;j++) {
-            var i=0;
             var map = maps[j];
             var dataObj = {data:[]};
             dataObj["highlightFill"] = highlight[j];
@@ -44,9 +44,8 @@ export default Ember.Component.extend(Charts, Options, BR, {
                 if (map.hasOwnProperty(key)) {
                     if (key.toUpperCase()==='LABEL') {dataObj['label']=map[key];}
                     else {
-                        labels[i] = key.toString();
+                        var i=labels.indexOf(key.toString());
                         dataObj["data"][i] = map[key];
-                        i++;
                     }
                 }
             }

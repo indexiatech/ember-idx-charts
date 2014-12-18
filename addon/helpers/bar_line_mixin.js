@@ -36,6 +36,19 @@ export default Ember.Mixin.create({
 
     // this should remove a whole dataset
     removeData: function() {
+    },
+
+    extractLabels: function(map) {
+        var labels=[]; var i=0;
+        for (var key in map) {
+            if (map.hasOwnProperty(key)) {
+                if (key.toUpperCase()!=='LABEL') {
+                    labels[i] = key.toString();
+                    i++;
+                }
+            }
+        }
+        return labels;
     }
 
 });

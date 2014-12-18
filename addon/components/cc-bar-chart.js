@@ -19,7 +19,7 @@ export default Ember.Component.extend(Charts, Options, BR, {
     options: function(){
         var myOptions = ['scaleShowGridLines','barDatasetSpacing', 'responsive'];
         return this.buildOptions(myOptions);
-    }.property('scaleShowGridLines','barDatasetSpacing', 'responsive'),
+    }.property('scaleShowGridLines','barDatasetSpacing', 'responsive', 'legendTemplate'),
 
     /*
      Expects data in a format of a map array where:

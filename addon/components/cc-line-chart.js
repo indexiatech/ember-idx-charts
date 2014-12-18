@@ -21,7 +21,7 @@ export default Ember.Component.extend(Charts, Options, BR, {
     options: function(){
         var myOptions = ['scaleShowGridLines','pointDot', 'datasetFill'];
         return this.buildOptions(myOptions);
-    }.property('scaleShowGridLines','pointDot', 'datasetFill'),
+    }.property('scaleShowGridLines','pointDot', 'datasetFill','legendTemplate'),
 
     /*
      Expects data in a format of a map array where:
